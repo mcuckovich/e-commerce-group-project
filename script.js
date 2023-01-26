@@ -32,6 +32,12 @@ const minus = document.querySelector(".minus");
 const plus = document.querySelector(".plus");
 const addBtn = document.querySelector(".add-cart");
 const cartQuantity = document.querySelector(".cart-quantity");
+const cartContainer = document.querySelector(".cart-container");
+const cartPopup = document.querySelector(".cart-popup");
+const cartPrice = document.querySelector(".cart-price");
+const firstSpan = document.querySelector(".first-span");
+const secondSpan = document.querySelector(".second-span");
+
 totalParagraph.textContent = `$${total}`;
 discountParagraph.textContent = `${discount * 100}%`;
 originalParagraph.textContent = `$${original}`;
@@ -71,4 +77,10 @@ plus.addEventListener("click", () => {
 addBtn.addEventListener("click", () => {
   cartQuantity.classList.remove("hide");
   cartQuantity.textContent = quantity;
+});
+
+cartContainer.addEventListener("click", () => {
+  cartPopup.classList.toggle("hide");
+  firstSpan.textContent = `$${total}.00 x ${quantity} `;
+  secondSpan.textContent = ` $${total * quantity}.00`;
 });

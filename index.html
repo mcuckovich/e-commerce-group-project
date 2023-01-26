@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | E-commerce product page</title>
+  </head>
+  <body>
+    <header>
+      <div class="left-header">
+        <img src="images/icon-menu.svg" alt="menu" />
+        <h1>
+          <img src="images/logo.svg" alt="sneakers" />
+        </h1>
+      </div>
+      <div class="right-header">
+        <div class="cart-container">
+          <img src="images/icon-cart.svg" alt="cart" />
+          <p class="cart-quantity hide"></p>
+        </div>
+        <nav>
+          <img src="images/image-avatar.png" alt="avatar" />
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="image-container">
+        <img
+          src="images/image-product-1.jpg"
+          alt="shoes"
+          class="current-image"
+        />
+        <img src="images/icon-next.svg" alt="left arrow" class="left arrow" />
+        <img src="images/icon-next.svg" alt="right arrow" class="right arrow" />
+      </div>
+      <div class="about-container">
+        <h2>SNEAKER COMPANY</h2>
+        <h3>Fall Limited Edition Sneakers</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident
+          maiores nulla perferendis veritatis aperiam nihil. Repellendus
+          assumenda sunt iste error, nemo magni deserunt, atque qui, mollitia
+          odio soluta excepturi. Facilis?
+        </p>
+        <div class="price-container">
+          <div class="total-discount">
+            <p class="total"></p>
+            <p class="discount"></p>
+          </div>
+          <p class="original"></p>
+        </div>
+        <div>
+          <div class="quantity-container">
+            <img src="images/icon-minus.svg" alt="icon minus" class="minus" />
+            <p class="quantity">0</p>
+            <img src="images/icon-plus.svg" alt="icon plus" class="plus" />
+          </div>
+          <button class="add-cart" disabled="true">Add to cart</button>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

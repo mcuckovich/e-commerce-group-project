@@ -18,12 +18,23 @@ const images = [
     alt: "shoes",
   },
 ];
+const cart = [];
+
+const product = {
+  original: 250,
+  discount: 0.5,
+  name: "Fall Limited Edition Sneakers",
+  description:
+    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident maiores nulla perferendis veritatis aperiam nihil. Repellendus assumenda sunt iste error, nemo magni deserunt, atque qui, mollitian odio soluta excepturi. Facilis?",
+};
+product.total = product.original * (1 - product.discount);
+
 const currentImage = document.querySelector(".current-image");
 const leftArrow = document.querySelector(".left");
 const rightArrow = document.querySelector(".right");
-const original = 250;
-const discount = 0.5;
-let total = original * (1 - discount);
+
+const productName = document.querySelector(".name");
+const description = document.querySelector(".description");
 const totalParagraph = document.querySelector(".total");
 const discountParagraph = document.querySelector(".discount");
 const originalParagraph = document.querySelector(".original");
@@ -41,9 +52,11 @@ const emtpyParagraph = document.querySelector(".empty-paragraph");
 const checkout = document.querySelector(".checkout");
 const contentContainer = document.querySelector(".content-container");
 
-totalParagraph.textContent = `$${total}`;
-discountParagraph.textContent = `${discount * 100}%`;
-originalParagraph.textContent = `$${original}`;
+productName.textContent = product.name;
+description.textContent = product.description;
+totalParagraph.textContent = `$${product.total}`;
+discountParagraph.textContent = `${product.discount * 100}%`;
+originalParagraph.textContent = `$${product.original}`;
 
 rightArrow.addEventListener("click", () => {
   if (imageIndex < images.length - 1) {
@@ -78,17 +91,20 @@ plus.addEventListener("click", () => {
 });
 
 addBtn.addEventListener("click", () => {
+  cart[0] = { item: product, quantity: quantity };
   cartQuantity.classList.remove("hide");
-  cartQuantity.textContent = quantity;
+  cartQuantity.textContent = cart[0].quantity;
+  firstSpan.textContent = `$${cart[0].item.total}.00 x ${cart[0].quantity} `;
+  secondSpan.textContent = ` $${cart[0].item.total * cart[0].quantity}.00`;
 });
 
 cartContainer.addEventListener("click", () => {
   cartPopup.classList.toggle("hide");
-  if (quantity !== 0) {
+  if (cart.length !== 0) {
     contentContainer.classList.remove("hide");
     checkout.classList.remove("hide");
-    firstSpan.textContent = `$${total}.00 x ${quantity} `;
-    secondSpan.textContent = ` $${total * quantity}.00`;
+    firstSpan.textContent = `$${cart[0].item.total}.00 x ${cart[0].quantity} `;
+    secondSpan.textContent = ` $${cart[0].item.total * cart[0].quantity}.00`;
     emtpyParagraph.classList.add("hide");
   }
 });

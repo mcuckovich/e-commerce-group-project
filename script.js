@@ -37,6 +37,9 @@ const cartPopup = document.querySelector(".cart-popup");
 const cartPrice = document.querySelector(".cart-price");
 const firstSpan = document.querySelector(".first-span");
 const secondSpan = document.querySelector(".second-span");
+const emtpyParagraph = document.querySelector(".empty-paragraph");
+const checkout = document.querySelector(".checkout");
+const contentContainer = document.querySelector(".content-container");
 
 totalParagraph.textContent = `$${total}`;
 discountParagraph.textContent = `${discount * 100}%`;
@@ -81,6 +84,11 @@ addBtn.addEventListener("click", () => {
 
 cartContainer.addEventListener("click", () => {
   cartPopup.classList.toggle("hide");
-  firstSpan.textContent = `$${total}.00 x ${quantity} `;
-  secondSpan.textContent = ` $${total * quantity}.00`;
+  if (quantity !== 0) {
+    contentContainer.classList.remove("hide");
+    checkout.classList.remove("hide");
+    firstSpan.textContent = `$${total}.00 x ${quantity} `;
+    secondSpan.textContent = ` $${total * quantity}.00`;
+    emtpyParagraph.classList.add("hide");
+  }
 });

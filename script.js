@@ -51,6 +51,7 @@ const secondSpan = document.querySelector(".second-span");
 const emtpyParagraph = document.querySelector(".empty-paragraph");
 const checkout = document.querySelector(".checkout");
 const contentContainer = document.querySelector(".content-container");
+const trash = document.querySelector(".trash");
 
 productName.textContent = product.name;
 description.textContent = product.description;
@@ -93,6 +94,9 @@ plus.addEventListener("click", () => {
 addBtn.addEventListener("click", () => {
   cart[0] = { item: product, quantity: quantity };
   cartQuantity.classList.remove("hide");
+  contentContainer.classList.remove("hide");
+  checkout.classList.remove("hide");
+  emtpyParagraph.classList.add("hide");
   cartQuantity.textContent = cart[0].quantity;
   firstSpan.textContent = `$${cart[0].item.total}.00 x ${cart[0].quantity} `;
   secondSpan.textContent = ` $${cart[0].item.total * cart[0].quantity}.00`;
@@ -107,4 +111,12 @@ cartContainer.addEventListener("click", () => {
     secondSpan.textContent = ` $${cart[0].item.total * cart[0].quantity}.00`;
     emtpyParagraph.classList.add("hide");
   }
+});
+
+trash.addEventListener("click", () => {
+  cart.splice(0, 1);
+  contentContainer.classList.add("hide");
+  checkout.classList.add("hide");
+  emtpyParagraph.classList.remove("hide");
+  cartQuantity.classList.add("hide");
 });

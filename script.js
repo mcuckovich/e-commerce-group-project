@@ -52,12 +52,23 @@ const emtpyParagraph = document.querySelector(".empty-paragraph");
 const checkout = document.querySelector(".checkout");
 const contentContainer = document.querySelector(".content-container");
 const trash = document.querySelector(".trash");
+const hamburger = document.querySelector(".hamburger");
+const menuContainer = document.querySelector(".menu-container");
+const closeIcon = document.querySelector(".close-icon");
 
 productName.textContent = product.name;
 description.textContent = product.description;
 totalParagraph.textContent = `$${product.total}`;
 discountParagraph.textContent = `${product.discount * 100}%`;
 originalParagraph.textContent = `$${product.original}`;
+
+hamburger.addEventListener("click", () => {
+  menuContainer.classList.remove("hide");
+});
+
+closeIcon.addEventListener("click", () => {
+  menuContainer.classList.add("hide");
+});
 
 rightArrow.addEventListener("click", () => {
   if (imageIndex < images.length - 1) {

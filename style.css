@@ -152,9 +152,7 @@ h3 {
   border-radius: 5px;
 }
 
-
-
-.cart {
+.cart-popup {
   background-color: white;
   border: 1px solid white;
   border-radius: 20px;
@@ -165,13 +163,12 @@ h3 {
   width: 90%;
   top: 100px;
   padding: 20px;
-
 }
 
 .cart-paragraph {
   padding-bottom: 20px;
   font-weight: bold;
-  border-bottom: .5px solid lightgrey;
+  border-bottom: 0.5px solid lightgrey;
 }
 
 .content-container {
@@ -180,17 +177,16 @@ h3 {
   justify-content: space-between;
   padding: 20px 0;
   color: hsl(220, 14%, 75%);
-
-
 }
 
 .cart-image {
   height: 50px;
   border-radius: 8px;
 }
-
-
-
+.second-span {
+  font-weight: bold;
+  color: black;
+}
 .hide {
   display: none;
 }

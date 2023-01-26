@@ -35,9 +35,41 @@ main {
   align-items: center;
 }
 
+.menu-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.menu {
+  background-color: white;
+  font-weight: bolder;
+  width: 60%;
+  height: 100%;
+  padding: 20px;
+}
+
+header nav ul {
+  padding-left: 0;
+}
+
+header nav ul li {
+  padding-top: 20px;
+  list-style: none;
+  font-size: 20px;
+}
+
 header img {
-  height: 25px;
   padding: 10px;
+  height: 25px;
+}
+
+.close-icon {
+  height: 15px;
+  padding: 0px;
 }
 
 .cart-container {
@@ -187,6 +219,7 @@ h3 {
   font-weight: bold;
   color: black;
 }
+
 .hide {
   display: none;
 }
